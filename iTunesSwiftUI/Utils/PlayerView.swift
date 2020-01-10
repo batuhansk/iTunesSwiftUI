@@ -50,13 +50,13 @@ struct PlayerView: View {
     
     private func playAVPlayer() {
         isPlaying = true
-
+        
         avPlayer.play()
     }
     
     private func pauseAVPlayer() {
         isPlaying = false
-
+        
         avPlayer.pause()
     }
     

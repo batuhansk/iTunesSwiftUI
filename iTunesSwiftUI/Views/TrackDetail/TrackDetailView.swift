@@ -27,7 +27,7 @@ struct TrackDetailView: View {
                 Text(viewModel.collectionName!)
                     .font(.headline)
                     .padding(.top, 8)
-                .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.center)
             }
             
             if viewModel.trackName != nil {
