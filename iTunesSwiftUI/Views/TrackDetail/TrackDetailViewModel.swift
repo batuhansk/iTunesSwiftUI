@@ -9,18 +9,30 @@
 import Foundation
 import Combine
 
-final class TrackDetailViewModel: ObservableObject {
+protocol TrackDetailViewModelProtocol: class {
+    var artistName: String { get }
+    
+    var trackName: String { get }
+    
+    var collectionName: String { get }
+    
+    var artworkURL: URL? { get }
+    
+    var previewURL: URL? { get }
+}
+
+final class TrackDetailViewModel: ObservableObject, TrackDetailViewModelProtocol {
     
     public var artistName: String {
         item.artistName
     }
     
-    public var trackName: String? {
-        item.trackName
+    public var trackName: String {
+        item.trackName ?? "Unknown Artist"
     }
     
-    public var collectionName: String? {
-        item.collectionName
+    public var collectionName: String {
+        item.collectionName ?? "Unknown Collection"
     }
     
     public var artworkURL: URL? {

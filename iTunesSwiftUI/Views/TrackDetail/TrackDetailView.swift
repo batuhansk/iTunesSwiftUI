@@ -23,18 +23,14 @@ struct TrackDetailView: View {
                 .padding([.leading, .trailing], 16)
                 .multilineTextAlignment(.center)
             
-            if viewModel.collectionName != nil {
-                Text(viewModel.collectionName!)
-                    .font(.headline)
-                    .padding(.top, 8)
-                    .multilineTextAlignment(.center)
-            }
+            Text(viewModel.collectionName)
+                .font(.headline)
+                .padding(.top, 8)
+                .multilineTextAlignment(.center)
             
-            if viewModel.trackName != nil {
-                Text(viewModel.trackName!)
-                    .font(.caption)
-                    .padding(.top, 8)
-            }
+            Text(viewModel.trackName)
+                .font(.caption)
+                .padding(.top, 8)
             
             if viewModel.artworkURL != nil {
                 ImageView(url: viewModel.artworkURL!)

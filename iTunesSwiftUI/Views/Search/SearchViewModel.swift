@@ -37,4 +37,5 @@ final class SearchViewModel: ObservableObject {
     func onSearchTermChanged() {
         searchSubject.send(())
     }
+    
 }

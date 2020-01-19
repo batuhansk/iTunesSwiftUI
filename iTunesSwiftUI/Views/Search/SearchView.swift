@@ -11,7 +11,7 @@ import Combine
 
 struct SearchView: View {
     
-    @ObservedObject var viewModel = SearchViewModel()
+    @ObservedObject var viewModel: SearchViewModel
     
     var body: some View {
         NavigationView {
@@ -35,7 +35,7 @@ struct SearchView: View {
 #if DEBUG
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        SearchView(viewModel: SearchViewModel())
     }
 }
 #endif

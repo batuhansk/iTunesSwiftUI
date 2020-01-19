@@ -9,14 +9,14 @@
 import Foundation
 import Combine
 
-struct NetworkAdapter {
+final class NetworkAdapter {
     
     struct Response<T> {
         let value: T
     }
     
     private var session: URLSession {
-        return URLSession.shared
+        URLSession.shared
     }
     
     private func buildRequest(_ endpoint: iTunesAPI) -> URLRequest? {
@@ -37,7 +37,6 @@ struct NetworkAdapter {
     }
     
     public func execute<T: Decodable>(_ endpoint: iTunesAPI, dataType: T.Type, decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response<T>, NetworkError> {
-
         guard let request = buildRequest(endpoint) else {
             return Fail(error: .invalidRequest).eraseToAnyPublisher()
         }
